@@ -1,0 +1,1 @@
+在 /etc/hosts 目录下有个 host 文件
