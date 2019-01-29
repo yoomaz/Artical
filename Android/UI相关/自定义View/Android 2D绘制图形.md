@@ -33,8 +33,10 @@ useCenter  ： 是否是实心的
 ```java
     private void drawArc(Canvas canvas) {
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setColor(Color.RED);paint.setStrokeWidth(0.1f * getWzidth() / 3);
-        paint.setStyle(Paint.Style.STROKE);float margin = 0.1f * getWidth() / 3;
+        paint.setColor(Color.RED);
+	paint.setStrokeWidth(0.1f * getWzidth() / 3);
+        paint.setStyle(Paint.Style.STROKE);
+	float margin = 0.1f * getWidth() / 3;
         float left = 2 * getWidth() / 3 + margin;
         float top = 0 + margin;
         float right = getWidth() - margin;

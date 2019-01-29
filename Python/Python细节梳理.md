@@ -1,7 +1,10 @@
+# Python细节梳理
+
 ## 前言
+
 因为最近在写一个 android 构建脚本，需要使用python，就借这个机会学一下这个语言吧，这里记录一下使用过程中遇到的一些不大不小的问题，会不断更新，同时方便以后再遇到相同问题方便查找。
 
-## 正文
+## Tip
 
 1. 升级Python
 
@@ -62,3 +65,79 @@
      XXX
    ```
    感觉和 java 很像，就是 catch 变成 except 了，这个 Error 也是有继承关系的
+
+
+## 模块
+
+#### 文件处理
+
+1. 判断文件是否存在
+
+   ```python
+   import os
+   
+   os.path.exists(file_path)
+   ```
+
+2. 连接路径和文件
+
+   ```python
+   import os
+   
+   os.path.join(path, file_name)
+   ```
+
+3. 拷贝文件，使用 shutil
+
+   ```python
+   import shutil
+   
+   shutil.copy(origin_file, to_file)
+   ```
+
+4. 打开文件，读取文件内容
+
+   ```python
+   INFO_FILE_NAME = 'pic_info.txt'
+   
+   with open(INFO_FILE_NAME) as info:
+       info_content = info.readlines()
+   ```
+
+   注意，这里 `info_content` 是一个 List 列表，里面包含每一行的字符串
+
+5. 获取当前文件所在路径
+
+   ```python
+   import os
+   os.path.abspath(os.path.dirname(__file__))
+   ```
+	
+
+
+### 字符串
+
+1. 判断字符串是否包含某些字符
+
+   ```python
+   str = 'hello'
+   result = str.find('h')
+   ```
+
+2. 替换字符
+
+   ```
+   str = 'hello'
+   result = str.replace('h','H')
+   ```
+
+3. 截取
+
+   ```
+   str = 'key=value'
+   array_result = str.split('=')
+   
+   print(array_result[0]) // key
+   print(array_result[1]) // value
+   ```
+
